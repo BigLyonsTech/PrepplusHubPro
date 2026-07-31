@@ -1,0 +1,21 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "20"
+
+# Proxies API calls to the Render backend so the frontend can keep calling
+# same-origin "/api" in both dev (Vite proxy) and production (this redirect) —
+# also avoids CORS entirely since the browser never talks to Render directly.
+# Replace the backend URL below with your actual Render service URL once it's deployed.
+[[redirects]]
+  from = "/api/*"
+  to = "https://REPLACE-WITH-YOUR-RENDER-URL.onrender.com/api/:splat"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
