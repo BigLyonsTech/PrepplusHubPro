@@ -1,11 +1,10 @@
 services:
   - type: web
     name: prepplushub-backend
-    env: java
+    runtime: docker
     rootDir: backend
+    dockerfilePath: ./Dockerfile
     plan: free
-    buildCommand: ./mvnw clean package -DskipTests
-    startCommand: java -jar target/prepplushub-backend-0.0.1-SNAPSHOT.jar
     healthCheckPath: /api/health
     envVars:
       - key: MONGODB_URI
