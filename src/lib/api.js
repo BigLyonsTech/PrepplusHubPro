@@ -7,7 +7,7 @@ const API_BASE_URL = normalizeBaseUrl(import.meta.env.VITE_API_BASE_URL)
 
 async function apiFetch(path, options = {}) {
   const url = `${API_BASE_URL}${path.startsWith('/') ? path : `/${path}`}`
-  const token = localStorage.getItem('oscillate_token')
+  const token = localStorage.getItem('prepplushub_token')
 
   const response = await fetch(url, {
     ...options,

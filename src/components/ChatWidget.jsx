@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { MessageCircle, X, Send } from 'lucide-react'
 import { streamChat } from '@/lib/chat'
 
-const WELCOME = "Hi! I'm the Oscillate shopping assistant. Ask me about products, categories, or what might suit what you're looking for."
+const WELCOME = "Hi! I'm the PrepplusHub shopping assistant. Ask me about products, categories, or what might suit what you're looking for."
 
 export default function ChatWidget() {
   const [open, setOpen] = useState(false)
@@ -62,7 +62,7 @@ export default function ChatWidget() {
           >
             <div className="flex items-center justify-between px-4 py-3 bg-canopy text-white shrink-0">
               <div>
-                <div className="font-display font-semibold text-sm">Oscillate assistant</div>
+                <div className="font-display font-semibold text-sm">PrepplusHub assistant</div>
                 <div className="text-[11px] text-white/60">Ask about products and get recommendations</div>
               </div>
               <button onClick={() => setOpen(false)} className="text-white/70 hover:text-white" aria-label="Close chat">

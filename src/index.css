@@ -49,7 +49,7 @@
 /* --- Dark theme ---
    Only the neutral tokens flip (page bg, card/"white" bg, main text, borders).
    Brand accents (leaf, canopy, coral, amber, emerald) stay identical in both
-   themes so the palette still reads as "Oscillate" either way. Toggled by
+   themes so the palette still reads as "PrepplusHub" either way. Toggled by
    adding/removing .dark on <html> — see ThemeToggle.jsx. */
 .dark {
   --color-white: #151C17;

@@ -18,7 +18,7 @@ export default function AuthEntry() {
 
   return (
     <AuthLayout className="text-center">
-      <h1 className="font-display text-4xl font-semibold mb-3">Welcome to Oscillate</h1>
+      <h1 className="font-display text-4xl font-semibold mb-3">Welcome to PrepplusHub</h1>
       <p className="text-onLight/60 mb-10">
         One account, whichever way you want to use it — as a shopper or as a vendor.
       </p>

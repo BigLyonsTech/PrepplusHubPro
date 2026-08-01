@@ -1,6 +1,5 @@
 import { Link, useNavigate } from 'react-router-dom'
-import wordmarkForLight from '@/assets/brand/oscillate-wordmark-dark-text.png'
-import wordmarkForDark from '@/assets/brand/oscillate-wordmark.png'
+import Wordmark from './Wordmark'
 
 const ADMIN_CODE = 'ADMIN2010sem2'
 
@@ -23,8 +22,7 @@ export default function Footer() {
     <footer className="bg-canopy/[0.04] border-t border-onLight/8 mt-32">
       <div className="container-page py-14 flex flex-col md:flex-row justify-between gap-8 text-sm">
         <div>
-          <img src={wordmarkForLight} alt="Oscillate" className="h-6 w-auto dark:hidden mb-3" />
-          <img src={wordmarkForDark} alt="Oscillate" className="h-6 w-auto hidden dark:block mb-3" />
+          <Wordmark className="text-lg mb-3" />
           <p className="max-w-xs text-onLight/50">
             A marketplace built for the people who make things, and the people who love finding them.
           </p>
@@ -43,7 +41,7 @@ export default function Footer() {
         </div>
       </div>
       <div className="container-page py-6 border-t border-onLight/8 text-xs text-onLight/35 flex items-center justify-between">
-        <span>© {new Date().getFullYear()} Oscillate Marketplace. All rights reserved.</span>
+        <span>© {new Date().getFullYear()} Prepplus Global Limited. All rights reserved.</span>
         {/* Intentionally unstyled beyond a plain word so it doesn't read as
             a real nav item to a casual visitor — not hidden via CSS (that's
             trivially found in devtools), just visually unremarkable. */}

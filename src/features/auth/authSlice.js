@@ -5,7 +5,7 @@ import { createSlice } from '@reduxjs/toolkit'
 const initialState = {
   user: null, // { id, name, email, role, kycDetails, onboardingStage, ... }
   isAuthenticated: false,
-  token: localStorage.getItem('oscillate_token'), // JWT for Authorization headers, set on login/verify-otp
+  token: localStorage.getItem('prepplushub_token'), // JWT for Authorization headers, set on login/verify-otp
   pendingEmail: null, // email awaiting OTP confirmation
   registrationIntent: null, // "customer" | "vendor" | null — set via referrer/query param
 }
@@ -77,7 +77,7 @@ const authSlice = createSlice({
       state.isAuthenticated = false
       state.pendingEmail = null
       state.token = null
-      localStorage.removeItem('oscillate_token')
+      localStorage.removeItem('prepplushub_token')
     },
   },
 })
@@ -87,7 +87,7 @@ function setToken(state, action) {
   const token = action.payload?.token
   if (token) {
     state.token = token
-    localStorage.setItem('oscillate_token', token)
+    localStorage.setItem('prepplushub_token', token)
   }
 }
 

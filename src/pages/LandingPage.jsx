@@ -101,7 +101,7 @@ export default function LandingPage() {
             </HeroIntro>
 
             <motion.p {...pop(AFTER_INTRO)} className="mt-6 text-lg text-onLight/60 max-w-md">
-              Oscillate connects independent makers and small vendors with people looking for things
+              PrepplusHub connects independent makers and small vendors with people looking for things
               worth buying. No algorithmic noise, just a feed built around what you actually want.
             </motion.p>
 
@@ -167,7 +167,7 @@ export default function LandingPage() {
           <Reveal direction="down" className="flex items-end justify-between mb-8 flex-wrap gap-4">
             <div>
               <span className="text-sm font-medium text-leaf-dim">Right now</span>
-              <h2 className="font-display text-3xl font-semibold mt-1">Trending on Oscillate</h2>
+              <h2 className="font-display text-3xl font-semibold mt-1">Trending on PrepplusHub</h2>
             </div>
             <Link to="/products" className="text-sm font-medium text-leaf-dim hover:underline">
               Browse all products →

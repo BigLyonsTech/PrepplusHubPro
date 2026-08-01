@@ -11,15 +11,14 @@ import TrustBar from '@/components/TrustBar'
 import ProductThumb from '@/components/ProductThumb'
 import PriceTag from '@/components/PriceTag'
 import ThemeToggle from '@/components/ThemeToggle'
-import wordmarkForLight from '@/assets/brand/oscillate-wordmark-dark-text.png'
-import wordmarkForDark from '@/assets/brand/oscillate-wordmark.png'
+import Wordmark from '@/components/Wordmark'
 import {
   fetchCart, addCartItem, updateCartItemQuantity, removeCartItem, fetchOrders, toggleWishlist,
 } from '@/store/slices/catalogSlice'
 
 /**
  * Customer Dashboard — 3-column layout (sidebar / main / docked cart panel)
- * matching the NovaShop reference, recolored to Oscillate's green/off-white
+ * matching the NovaShop reference, recolored to PrepplusHub's green/off-white
  * palette. Each category shows exactly 3 products (not a long flat list),
  * and the top search bar actually filters what's shown, live.
  */
@@ -324,8 +323,7 @@ function SidebarContent({ onNavigate }) {
   return (
     <>
       <div className="p-5 border-b border-onLight/8">
-        <img src={wordmarkForLight} alt="Oscillate" className="h-6 w-auto dark:hidden" />
-        <img src={wordmarkForDark} alt="Oscillate" className="h-6 w-auto hidden dark:block" />
+        <Wordmark className="text-lg" />
       </div>
       <nav className="flex-1 overflow-y-auto py-3">
         {NAV_ITEMS.map((item) => {
@@ -537,7 +535,7 @@ function CartPanelContent({ cartLines, cartCount, subtotal, discount, shipping, 
 
       <div className="p-4">
         <div className="rounded-2xl bg-canopy p-4 text-white text-center">
-          <div className="font-display font-semibold text-sm mb-1">Join Oscillate Club</div>
+          <div className="font-display font-semibold text-sm mb-1">Join PrepplusHub Club</div>
           <p className="text-xs opacity-70 mb-3">Get exclusive offers, early access and more</p>
           <button className="bg-white text-canopy text-xs font-semibold px-4 py-1.5 rounded-full">Join Now</button>
         </div>

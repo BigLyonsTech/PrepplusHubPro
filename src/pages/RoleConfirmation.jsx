@@ -30,7 +30,7 @@ export default function RoleConfirmation() {
       id: 'vendor',
       icon: Store,
       title: 'Continue as a Vendor',
-      desc: 'Apply to sell on Oscillate. We review a short eligibility form before you can list.',
+      desc: 'Apply to sell on PrepplusHub. We review a short eligibility form before you can list.',
     },
   ]
 
@@ -39,7 +39,7 @@ export default function RoleConfirmation() {
       <Navbar />
       <div className="container-page py-20 flex flex-col items-center">
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="text-center mb-10">
-          <h1 className="font-display text-4xl font-semibold mb-2">How do you want to use Oscillate?</h1>
+          <h1 className="font-display text-4xl font-semibold mb-2">How do you want to use PrepplusHub?</h1>
           <p className="text-onLight/55">
             {registrationIntent === 'customer'
               ? "We've pre-selected Customer since you came from a product link — switch anytime below."

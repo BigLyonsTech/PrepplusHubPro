@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Sun, Moon } from 'lucide-react'
 
-const STORAGE_KEY = 'oscillate-theme'
+const STORAGE_KEY = 'prepplushub-theme'
 
 function getInitialTheme() {
   if (typeof window === 'undefined') return 'light'

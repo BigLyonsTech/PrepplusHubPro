@@ -11,7 +11,7 @@ export default function HowItWorks() {
     <section className="bg-paper py-28">
       <div className="container-page">
         <Reveal className="mb-14 max-w-lg">
-          <span className="text-sm font-medium text-leaf-dim">How Oscillate works</span>
+          <span className="text-sm font-medium text-leaf-dim">How PrepplusHub works</span>
           <h2 className="font-display text-4xl md:text-5xl font-semibold mt-3 leading-tight">
             Three steps. No noise.
           </h2>

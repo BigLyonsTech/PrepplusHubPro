@@ -6,7 +6,8 @@
     <meta name="theme-color" content="#0B0B12" />
     <link rel="icon" type="image/png" href="/favicon.png" />
     <link rel="apple-touch-icon" href="/oscillate-icon-192.png" />
-    <title>Oscillate — Marketplace</title>
+    <title>PrepplusHub — Marketplace</title>
+    <meta name="description" content="PrepplusHub — a marketplace connecting independent makers and small vendors with shoppers." />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -16,7 +17,7 @@
     <script>
       // Runs before React mounts so there's no flash of the wrong theme.
       (function () {
-        var stored = localStorage.getItem('oscillate-theme');
+        var stored = localStorage.getItem('prepplushub-theme');
         var isDark = stored ? stored === 'dark' : window.matchMedia('(prefers-color-scheme: dark)').matches;
         if (isDark) document.documentElement.classList.add('dark');
       })();

@@ -4,12 +4,11 @@ import { ShoppingBag, User2 } from 'lucide-react'
 import Button from './ui/Button'
 import ThemeToggle from './ThemeToggle'
 import { cn } from '@/lib/utils'
-import wordmarkForLight from '@/assets/brand/oscillate-wordmark-dark-text.png'
-import wordmarkForDark from '@/assets/brand/oscillate-wordmark.png'
+import Wordmark from './Wordmark'
 
 const navLinks = [
   { to: '/products', label: 'Browse' },
-  { to: '/auth?intent=vendor', label: 'Sell on Oscillate' },
+  { to: '/auth?intent=vendor', label: 'Sell on PrepplusHub' },
 ]
 
 export default function Navbar() {
@@ -20,11 +19,8 @@ export default function Navbar() {
   return (
     <header className="sticky top-0 z-40 bg-paper/95 border-b border-onLight/8">
       <nav className="container-page flex items-center justify-between h-16">
-        <Link to="/" className="flex items-center shrink-0" aria-label="Oscillate">
-          {/* Dark-text version shows on the light (default) theme; the
-              original white-text version shows once dark theme is active. */}
-          <img src={wordmarkForLight} alt="Oscillate" className="h-6 md:h-7 w-auto dark:hidden" />
-          <img src={wordmarkForDark} alt="Oscillate" className="h-6 md:h-7 w-auto hidden dark:block" />
+        <Link to="/" className="flex items-center shrink-0" aria-label="PrepplusHub">
+          <Wordmark className="text-lg md:text-xl" />
         </Link>
 
         <div className="hidden md:flex items-center gap-1">

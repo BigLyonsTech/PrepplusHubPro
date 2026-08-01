@@ -12,7 +12,7 @@ export default function TermsAndConditions() {
             <h2 className="font-semibold text-onLight text-base mb-2">1. Your account</h2>
             <p>
               You agree to provide accurate identity information at registration, including the KYC
-              details required to verify your account. Oscillate may suspend accounts found to contain
+              details required to verify your account. PrepplusHub may suspend accounts found to contain
               false information.
             </p>
           </section>
@@ -27,7 +27,7 @@ export default function TermsAndConditions() {
           <section>
             <h2 className="font-semibold text-onLight text-base mb-2">3. Reviews</h2>
             <p>
-              Product and vendor reviews must reflect a genuine transaction. Oscillate reserves the right
+              Product and vendor reviews must reflect a genuine transaction. PrepplusHub reserves the right
               to remove reviews that violate this policy.
             </p>
           </section>
