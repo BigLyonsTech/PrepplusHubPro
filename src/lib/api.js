@@ -9,15 +9,22 @@ async function apiFetch(path, options = {}) {
   const url = `${API_BASE_URL}${path.startsWith('/') ? path : `/${path}`}`
   const token = localStorage.getItem('prepplushub_token')
 
-  const response = await fetch(url, {
-    ...options,
-    headers: {
-      Accept: 'application/json',
-      'Content-Type': 'application/json',
-      ...(token ? { Authorization: `Bearer ${token}` } : {}),
-      ...(options.headers || {}),
-    },
-  })
+  let response
+  try {
+    response = await fetch(url, {
+      ...options,
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+        ...(token ? { Authorization: `Bearer ${token}` } : {}),
+        ...(options.headers || {}),
+      },
+    })
+  } catch {
+    // fetch() itself throws on network failure (offline, DNS, CORS, connection
+    // refused) — never surface that raw browser error text to the user.
+    throw new Error('Network error — check your connection and try again.')
+  }
 
   if (!response.ok) {
     const data = await response.json().catch(() => ({ message: 'Request failed' }))

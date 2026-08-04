@@ -7,6 +7,7 @@ import { Field, Input } from '@/components/ui/Input'
 import AuthLayout from '@/features/auth/AuthLayout'
 import { loginSuccess } from '@/features/auth/authSlice'
 import { getPostAuthRedirect } from '@/features/auth/postAuthRedirect'
+import { apiPost } from '@/lib/api'
 
 export default function Login() {
   const dispatch = useDispatch()
@@ -22,18 +23,7 @@ export default function Login() {
     setIsSubmitting(true)
 
     try {
-      const response = await fetch('/api/auth/login', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email: form.email, password: form.password }),
-      })
-
-      const data = await response.json().catch(() => ({}))
-
-      if (!response.ok) {
-        throw new Error(data.message || 'Login failed')
-      }
-
+      const data = await apiPost('/auth/login', { email: form.email, password: form.password })
       dispatch(loginSuccess({ token: data.token }))
       navigate(getPostAuthRedirect(data.user || user || { role: 'CUSTOMER' }))
     } catch (err) {

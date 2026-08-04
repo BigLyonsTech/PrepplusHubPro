@@ -6,6 +6,7 @@ import Button from '@/components/ui/Button'
 import AuthLayout from '@/features/auth/AuthLayout'
 import { verifyOtpSuccess } from '@/features/auth/authSlice'
 import { getPostAuthRedirect } from '@/features/auth/postAuthRedirect'
+import { apiPost } from '@/lib/api'
 
 export default function OTPVerification() {
   const dispatch = useDispatch()
@@ -45,18 +46,7 @@ export default function OTPVerification() {
     setError('')
 
     try {
-      const response = await fetch('/api/auth/verify-otp', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email: pendingEmail || user?.email, otp: code }),
-      })
-
-      const data = await response.json().catch(() => ({}))
-
-      if (!response.ok) {
-        throw new Error(data.message || 'OTP verification failed')
-      }
-
+      const data = await apiPost('/auth/verify-otp', { email: pendingEmail || user?.email, otp: code })
       dispatch(verifyOtpSuccess({ token: data.token }))
       navigate(getPostAuthRedirect(data.user || user))
     } catch (err) {
@@ -71,16 +61,7 @@ export default function OTPVerification() {
     setResendMessage('')
 
     try {
-      const response = await fetch(`/api/auth/send-otp?email=${encodeURIComponent(pendingEmail || user?.email)}`, {
-        method: 'POST',
-      })
-
-      const data = await response.json().catch(() => ({}))
-
-      if (!response.ok) {
-        throw new Error(data.message || 'Failed to resend OTP')
-      }
-
+      const data = await apiPost(`/auth/send-otp?email=${encodeURIComponent(pendingEmail || user?.email)}`)
       setResendMessage('Code resent to your email. Check your inbox.')
       setDigits(['', '', '', '', '', ''])
       setDevOtp(data.devOtp || null)

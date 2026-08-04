@@ -7,7 +7,7 @@ import { Field, Input, Select } from '@/components/ui/Input'
 import AuthLayout from '@/features/auth/AuthLayout'
 import { registerStart } from '@/features/auth/authSlice'
 import { ShieldCheck } from 'lucide-react'
-import { apiGet } from '@/lib/api'
+import { apiPost } from '@/lib/api'
 
 const idTypes = ['National ID (NIN)', 'International Passport', "Driver's License", 'Voter\'s Card']
 
@@ -61,18 +61,7 @@ export default function RegistrationForm() {
         phoneNumber: form.phone,
       }
 
-      const response = await fetch('/api/auth/register', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload),
-      })
-
-      const data = await response.json().catch(() => ({}))
-
-      if (!response.ok) {
-        throw new Error(data.message || 'Registration failed')
-      }
-
+      const data = await apiPost('/auth/register', payload)
       dispatch(registerStart({ id: `u-${Date.now()}`, ...form, email: payload.email, devOtp: data.devOtp || null }))
       setSubmitMessage(data.message || 'Account created. Please verify your email.')
       navigate('/verify-otp')
